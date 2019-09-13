@@ -46,5 +46,7 @@ for f in *.md; do echo -e "---\n---\n$(cat $f)" > $f; done
 References & Resources
 ----------------------
 * [SO question][1]
+* [JQ Manual][2]
 
 [1]: https://stackoverflow.com/questions/26287130/converting-lines-to-json-in-bash
+[2]: https://stedolan.github.io/jq/manual
