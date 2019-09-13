@@ -42,3 +42,9 @@ To add YAML frontmatter to all files:
 # echo the new lines in front of the cat output of each file:
 for f in *.md; do echo -e "---\n---\n$(cat $f)" > $f; done
 ```
+
+References & Resources
+----------------------
+* [SO question][1]
+
+[1]: https://stackoverflow.com/questions/26287130/converting-lines-to-json-in-bash
