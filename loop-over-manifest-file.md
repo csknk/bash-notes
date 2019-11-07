@@ -13,10 +13,25 @@ for line in $(cat manifest); do
 	echo "Downloading ${line}..."
 	wget "${line}"
 done
+```
+In general:
 
-# In general:
+```bash
 for LINE in $(cat FILE); do COMMAND; done
 ```
+
+This is a more complete version that loops over a manifest file that is supplied as a command line argument, using each line as a command line argument for a command:
+
+```bash
+#!/bin/bash
+[[ $# -eq 0 ]] && { echo "Please supply a target file: $(basename $0) <path/to/file>"; exit 1; }
+
+for line in $(cat ${1}); do
+	echo "testing using input: ${line}"
+	./bin/main ${line}
+done
+```
+Just add all test input files as separate lines in a manifest file, and pass the manifest to the script.
 
 Method 2: Input Redirection
 ---------------------------
