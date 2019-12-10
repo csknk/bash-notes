@@ -16,6 +16,20 @@ Note that spaces are not allowed between `<` and `(`.
 >
 > Bash reference manual
 
+Not Needed for sha256sum
+------------------------
+After reading the man page for `sha256sum` it's clear that if the programme does not receive a filename as an argument, it reads standard input.
+
+This means that we don't need process substitution in this case - the following works:
+
+```bash
+echo -n "foo" | sha256sum
+
+# Just the hash:
+echo -n "foo" | sha256sum | awk '{print $1}'
+```
+Note `-n` option for echo - if not included, the stdin passed to `sha256sum` will include a newline.
+
 Reference
 ---------
 * [Process Substitution][1], Bash reference manual
