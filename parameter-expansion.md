@@ -23,7 +23,8 @@ Length is **exclusive** so if you want the first 3 characters of the string you 
 ```bash
 VAR="hello world"
 echo "${VAR:1}" # Outputs "ello world"
-echo "${VAR:0:5}" # Outputs "hello"
+echo "${VAR:0:5}" # Outputs letters from position 0 to posiion 4: "hello"
+echo "${VAR:0:1}" # Outputs the first letter only: "h"
 ```
 
 Negative indices count from the right. The following outputs the last letter in the string:
