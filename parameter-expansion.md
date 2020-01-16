@@ -6,7 +6,7 @@ Substitution
 * `${VARIABLE%suffix*}` Remove characters from suffix to end from VARIABLE
 * `${VARIABLE%%suffix}` Remove longest matching suffix from VARIABLE
 * `${VARIABLE%%suffix*}` Remove chars from the suffix furthest from end from VARIABLE
-* `${VARIABLEi#prefix}` Remove prefix from VARIABLE
+* `${VARIABLE#prefix}` Remove prefix from VARIABLE
 * `${VARIABLE/old/new}` Replace first match of old with new
 * `${VARIABLE//old/new}` Replace all instances of old with new
 * `${VARIABLE/%old/new}` Replace old suffix with new
@@ -22,9 +22,16 @@ Length is **exclusive** so if you want the first 3 characters of the string you 
 
 ```bash
 VAR="hello world"
-echo "${VAR:1}" # outputs "ello world"
-echo "${VAR:0:5}" # outputs "hello"
+echo "${VAR:1}" # Outputs "ello world"
+echo "${VAR:0:5}" # Outputs "hello"
 ```
+
+Negative indices count from the right. The following outputs the last letter in the string:
+
+```bash
+echo "${VAR: -1}" # Outputs "d"
+```
+__Note that the space after the colon is required in this case.__
 
 ### Remove Trailing Slash on Variable
 ```bash
