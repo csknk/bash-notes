@@ -29,3 +29,9 @@ for i in ${!nums[*]}; do echo "${i}: ${nums[i]}"; done
 # Loop elements directly:
 for el in ${nums[*]}; do echo "${el}"; done
 ```
+
+Resources
+---------
+* [Linux Journal, Bash Arrays][1]
+
+[1]: https://www.linuxjournal.com/content/bash-arrays
