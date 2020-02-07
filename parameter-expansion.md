@@ -54,7 +54,18 @@ FILENAME=test.txt
 echo "${FILENAME#*.}" # Remove all from start to '.'
 EXT=${FILENAME#*.} # Assign to a new variable
 ```
+Defaults
+--------
+```bash
+# Echo first command line argument if set, otherwise echo "default value":
+echo "${1:-default value}"
+```
 
+### Variable Not Set - Print Message and Exit
+```bash
+# Prints "Missing argument" if $1 is not set
+ ${1:?Missing argument}
+```
 
 References
 ----------
