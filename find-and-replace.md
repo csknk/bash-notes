@@ -22,4 +22,7 @@ find . -type f -name '*.md' -exec sed -i '1!b;s/^/\# /g' {} \;
 
 # Remove any lines beginning with "===" in markdown files in current directory
 find . -type f -name '*.md' -exec sed -i '/^===/d' {} \;
+
+# Capture a date pattern in TOML frontmatter of markdown files and clean up:
+find . -name '*.md' -o -name '*.markdown' -exec sed -i 's/^date = \([0-9\-]*\).*/date = \1/g' {} \;
 ```
