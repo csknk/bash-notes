@@ -1,5 +1,5 @@
 # Templates
-Assuming a template file `template.txt` exists in the current directory, where the strings `id` and `NAME` should be substituted.
+Assuming a template file `template.txt` exists in the current directory, where the strings `ID` and `NAME` should be substituted.
 
 m4 Solution 
 -----------
