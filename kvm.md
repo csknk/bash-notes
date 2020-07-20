@@ -35,6 +35,12 @@ virsh net-dhcp-leases default | grep donnager | awk '{print $5}' | awk -F / '{pr
 ```
 You can now SSH into the vm: `ssh user@192.168.123.204`
 
+Alternative, if you know the domain name:
+
+```bash
+virsh domifaddr donnager
+```
+
 Virsh REPL
 ----------
 You can enter a virsh shell by entering `virsh` in the terminal. Once in the interactive terminal, you can run commands wihtout the `virsh` command:
