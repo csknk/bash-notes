@@ -29,4 +29,14 @@ echo -n $foo | xxd                                                              
 # Output - note that special characters are replaced by space characters:
 00000000: 6420 6420 64                             d d d
 ```
+Add to File
+-----------
 
+```bash
+printf "%b" '\x64\x61\x76\x65' > /tmp/dave.bin
+
+xxd /tmp/dave.bin
+
+# Output:
+00000000: 6461 7665                                dave
+```
