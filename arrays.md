@@ -30,6 +30,13 @@ for i in ${!nums[*]}; do echo "${i}: ${nums[i]}"; done
 for el in ${nums[*]}; do echo "${el}"; done
 ```
 
+```bash
+# Add to array in loop
+for i in $(seq 0 2); do adds[$i]=$(bitcoin-cli -regtest getnewaddress); done
+
+echo ${adds[@]}
+```
+
 Resources
 ---------
 * [Linux Journal, Bash Arrays][1]
