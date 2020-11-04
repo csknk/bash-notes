@@ -26,3 +26,16 @@ find . -type f -name '*.md' -exec sed -i '/^===/d' {} \;
 # Capture a date pattern in TOML frontmatter of markdown files and clean up:
 find . -name '*.md' -o -name '*.markdown' -exec sed -i 's/^date = \([0-9\-]*\).*/date = \1/g' {} \;
 ```
+
+Remove Spaces
+--------------
+```bash
+
+#!/bin/bash
+compress (){
+	sed -i 's/\(\".*\"\)\|\s*/\1/g' "$1"
+}
+
+compress "$1"
+```
+
